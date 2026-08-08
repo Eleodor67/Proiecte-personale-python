@@ -24,11 +24,11 @@ for conditie1 in range(len(parola)):
     if(parola[conditie1].isalpha()==False or parola[conditie1]==" "):
         doar_litere=False
         break
-print("Are doar litere: "+ str(doar_litere))   
+print("Are doar litere(vrem False): "+ str(doar_litere))   
 doar_spatii=False
 for conditie1 in range(len(parola)):
     if(parola[conditie1]==" "):
         doar_spatii=True
         break
-print("Are spatii: "+str(doar_spatii))
+print("Are spatii(vrem False): "+str(doar_spatii))
 print("==============================")
