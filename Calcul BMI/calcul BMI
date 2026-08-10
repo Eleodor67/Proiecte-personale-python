@@ -1,6 +1,6 @@
 greutate = float(input("Greutatea (kg): "))
 inaltime = float(input("Înălțimea (m): "))
-inaltime /=100
+#inaltime /=100
 bmi = greutate / (inaltime ** 2)
 bmi=round(bmi,1)
 print(f"BMI-ul este: {bmi}")
