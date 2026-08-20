@@ -1,4 +1,3 @@
-decision_number=int(1)
 tasks=[" "]
 print("""=== Task list ===
         1. Add task
@@ -7,24 +6,11 @@ print("""=== Task list ===
         4. Delete task
         5. Exit""")
 while True:
-    
-    if (decision_number==5):
-        print("You closed the program")
-        exit()
-    else:
-        decision_number= int(input("Choose an option: "))
-        if(decision_number=="" or decision_number==" "):
-                print("Fields cannot be empty.")
-                continue
-
-        if(decision_number >= 1 and decision_number<=5):
-            pass
-        else:
-            print("Choose a number between 1 and 5")
-    if(decision_number==1):
+    decision_number= input("Choose an option: ")
+    if(decision_number=="1"):
         tasks.append("[ ]"+ input("New task: ").strip())
         print("Task added")
-    if(decision_number==2):
+    elif(decision_number=="2"):
         if(len(tasks)<1):
             print("There are no tasks added")
         else:
@@ -32,7 +18,7 @@ while True:
             for i in range(len(tasks)):
                 if(i!=0):
                     print(f"{i}. "+ tasks[i])
-    if(decision_number==3):
+    elif(decision_number=="3"):
         if(len(tasks)>0):
             for i in range(len(tasks)):
                             if(i!=0):
@@ -46,7 +32,7 @@ while True:
         else:
              print("There are not any tasks yet")
 
-    if(decision_number==4):
+    elif(decision_number=="4"):
         if(len(tasks)>0):
             for i in range(len(tasks)):
                                 if(i!=0):
@@ -60,5 +46,10 @@ while True:
                 continue
         else:
             print("There are no tasks added")
-    
+    elif (decision_number=="5"):
+        print("You closed the program")
+        exit()
+    else:
+         print("Invalid option.")
+
     
