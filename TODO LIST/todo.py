@@ -1,6 +1,5 @@
-#tasks: 1. taskurile sa inceapa de la 1 nu de la 0, 2. erorile cu str si float 3. eroare task gol(enter)
 decision_number=int(1)
-tasks=[]
+tasks=[" "]
 print("""=== Task list ===
         1. Add task
         2. Show tasks
@@ -14,12 +13,16 @@ while True:
         exit()
     else:
         decision_number= int(input("Choose an option: "))
+        if(decision_number=="" or decision_number==" "):
+                print("Fields cannot be empty.")
+                continue
+
         if(decision_number >= 1 and decision_number<=5):
             pass
         else:
             print("Choose a number between 1 and 5")
     if(decision_number==1):
-        tasks.append("[ ]"+ input("New task: "))
+        tasks.append("[ ]"+ input("New task: ").strip())
         print("Task added")
     if(decision_number==2):
         if(len(tasks)<1):
@@ -27,13 +30,15 @@ while True:
         else:
             print("All your tasks: ")
             for i in range(len(tasks)):
-                print(f"{i}. "+ tasks[i])
+                if(i!=0):
+                    print(f"{i}. "+ tasks[i])
     if(decision_number==3):
         if(len(tasks)>0):
             for i in range(len(tasks)):
-                            print(f"{i}. "+ tasks[i])
+                            if(i!=0):
+                                print(f"{i}. "+ tasks[i])
             mark_as_done=int(input("Choose what tasks you want to mark as done: "))
-            if(mark_as_done<=len(tasks)):
+            if(mark_as_done>0 and mark_as_done<len(tasks)):
                 tasks[mark_as_done]=tasks[mark_as_done].replace("[ ]","[x]")
             else:
                 print("Please choose a valid number")
@@ -44,10 +49,11 @@ while True:
     if(decision_number==4):
         if(len(tasks)>0):
             for i in range(len(tasks)):
-                print(f"{i}. "+ tasks[i])
-
+                                if(i!=0):
+                                    print(f"{i}. "+ tasks[i])
             mark_for_delete=int(input("Choose what tasks you want to delete: "))
-            if(mark_for_delete<=len(tasks)):
+            if(mark_for_delete!=0 and mark_for_delete<len(tasks)):
+                print(f"Task {mark_for_delete} was deleted")
                 tasks.pop(mark_for_delete)
             else:
                 print("Please choose a valid number")
