@@ -1,3 +1,4 @@
+#tasks: 1. taskurile sa inceapa de la 1 nu de la 0, 2. erorile cu str si float 3. eroare task gol(enter)
 decision_number=int(1)
 tasks=[]
 print("""=== Task list ===
@@ -9,7 +10,8 @@ print("""=== Task list ===
 while True:
     
     if (decision_number==5):
-        exit
+        print("You closed the program")
+        exit()
     else:
         decision_number= int(input("Choose an option: "))
         if(decision_number >= 1 and decision_number<=5):
